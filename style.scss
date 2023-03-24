@@ -1,0 +1,406 @@
+@font-face {
+  font-family: "Labrada";
+  src: url("./fontfamily/Labrada-VariableFont_wght.ttf");
+}
+$myColor: rgb(5, 89, 168);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Labrada";
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+header {
+  padding: 0 3px;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: $myColor;
+  border-bottom: 2px solid blue;
+  .left {
+    width: 30%;
+  }
+  .logo {
+    align-self: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin: 10px;
+  }
+  .hamburger {
+    display: none;
+  }
+  nav {
+    width: 70%;
+    height: 10vh;
+  }
+}
+nav {
+  .main-nav {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    & > li {
+      cursor: pointer;
+      justify-content: space-between;
+      list-style-type: none;
+      text-align: center;
+      align-self: center;
+      padding: 4px;
+      font-weight: bold;
+      &:hover {
+        border-bottom: 2px solid red;
+        font-size: 18px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .destination-content {
+      display: none;
+    }
+    .ticket-content {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  header {
+    width: 100vw;
+    .left {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      .hamburger {
+        display: block;
+        cursor: pointer;
+        align-self: center;
+        margin: 0 10px;
+      }
+      .hamburger .line {
+        width: 25px;
+        height: 2px;
+        background-color: white;
+        margin: 3px 0;
+      }
+    }
+  }
+  .nav-bar {
+    background-color: aqua;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 0;
+    transition: 0.5s;
+    .main-nav {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      .destination {
+        display: block;
+        overflow: hidden;
+      }
+      .ticket {
+        display: block;
+      }
+      .destination-content.activeD {
+        display: flex;
+        flex-direction: column;
+        & > a {
+          margin-top: 20px;
+          overflow: hidden;
+          &:hover {
+            color: black;
+            border-bottom: 1px solid red;
+          }
+        }
+      }
+      .ticket-content.activeT {
+        display: flex;
+        flex-direction: column;
+        & > a {
+          margin-top: 20px;
+          overflow: hidden;
+          &:hover {
+            color: black;
+            border-bottom: 1px solid red;
+          }
+        }
+      }
+    }
+  }
+
+  .firstSection {
+    padding: 5px 8px 5px 5px;
+    padding-right: 20px;
+    width: 100vw;
+    height: auto;
+    .uraSection {
+      width: 100%;
+      height: 100%;
+      #uraGurit {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .travelA {
+      margin-top: 10px;
+      width: 100%;
+      height: 100%;
+      #planeStation {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .travelB {
+      margin-top: 10px;
+      width: 100%;
+      height: 100%;
+      #planeStation {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .images {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 15px;
+    padding: 10px 5px;
+    .img {
+      width: 100%;
+      text-align: center;
+      background-color: aliceblue;
+      box-shadow: 5px 5px 10px rgb(183, 174, 174);
+      border-radius: 5px;
+      img {
+        width: 100%;
+        height: 185px;
+        object-fit: cover;
+      }
+    }
+  }
+  h2 {
+    text-align: center;
+    border-top: 1px solid black;
+  }
+}
+
+.nav-bar.active {
+  height: 90vh;
+  .main-nav {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px) {
+  header {
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+  }
+  .left {
+    width: 20%;
+    .hamburger {
+      display: none;
+    }
+  }
+  .nav-bar {
+    width: 80%;
+    .main-nav {
+      display: flex;
+      li {
+        a {
+          font-size: 2vw;
+        }
+      }
+
+      .destination-content.activeD {
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 10vh;
+        padding-right: 25px;
+        border: 1px solid black;
+        background-color: $myColor;
+        a {
+          text-align: center;
+          display: flex;
+          overflow: hidden;
+          margin-bottom: 10px;
+        }
+      }
+      .ticket-content.activeT {
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 10vh;
+        padding-right: 10px;
+        border: 1px solid black;
+        background-color: $myColor;
+        a {
+          display: flex;
+          overflow: hidden;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .firstSection {
+    .uraSection {
+      text-align: center;
+      margin: 0;
+      img {
+        width: 100vh;
+        height: auto;
+        margin: 0;
+      }
+    }
+    .column {
+      display: flex;
+      flex-direction: row;
+      margin: 10px 0;
+      .travelImg {
+        margin: 5px;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        margin: 0 5px;
+      }
+    }
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 15px;
+    padding: 10px 5px;
+    .img {
+      width: 100%;
+      text-align: center;
+      background-color: aliceblue;
+      box-shadow: 5px 5px 10px rgb(183, 174, 174);
+      border-radius: 5px;
+      img {
+        width: 100%;
+        height: 185px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    overflow-y: hidden;
+  }
+  .nav-bar {
+    .main-nav {
+      .destination-content.activeD {
+        display: block;
+        position: absolute;
+        top: 10vh;
+        padding-right: 25px;
+        border: 1px solid black;
+        background-color: $myColor;
+        a {
+          text-align: center;
+          display: flex;
+          overflow: hidden;
+          margin-bottom: 10px;
+        }
+      }
+      .ticket-content.activeT {
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 10vh;
+        padding-right: 10px;
+        border: 1px solid black;
+        background-color: $myColor;
+        a {
+          display: flex;
+          overflow: hidden;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .firstSection {
+    width: 100vw;
+    height: auto;
+    .uraSection {
+      width: 100%;
+      height: auto;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      #uraGurit {
+        width: 100%;
+        height: 100%;
+      }
+      .desSection {
+        width: 100%;
+        padding-right: 15px;
+        margin-left: 10px;
+      }
+    }
+    .travelA {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      #planeStation {
+        width: 100%;
+      }
+      p {
+        width: 100%;
+        padding-right: 15px;
+        margin-left: 10px;
+      }
+    }
+    .travelB {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      #busStation {
+        width: 100%;
+      }
+      p {
+        width: 100%;
+        padding-right: 15px;
+        margin-left: 10px;
+      }
+    }
+  }
+  h2 {
+    text-align: center;
+  }
+  .images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}

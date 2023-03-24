@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  background-image: url(images/backImage.jpg);
+}
+body form {
+  width: 50%;
+  border: 1px solid black;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  border-radius: 50px;
+  background-color: rgb(5, 89, 168);
+}
+body form input {
+  width: 50%;
+  margin: auto;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+}
+body form input[type=submit] {
+  background-color: green;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}/*# sourceMappingURL=logIn.css.map */

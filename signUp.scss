@@ -1,0 +1,29 @@
+$myColor: rgb(5, 89, 168);
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  background-image: url(images/backImage.jpg);
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    background-color: $myColor;
+    border-radius: 50px;
+    input {
+      text-align: center;
+      font-weight: bold;
+      width: 50%;
+      margin: auto;
+      border-radius: 10px;
+    }
+    input[type="submit"] {
+      background-color: green;
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,397 @@
+@font-face {
+  font-family: "Labrada";
+  src: url("./fontfamily/Labrada-VariableFont_wght.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Labrada";
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 0 3px;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(5, 89, 168);
+  border-bottom: 2px solid blue;
+}
+header .left {
+  width: 30%;
+}
+header .logo {
+  align-self: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin: 10px;
+}
+header .hamburger {
+  display: none;
+}
+header nav {
+  width: 70%;
+  height: 10vh;
+}
+
+nav .main-nav {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+}
+nav .main-nav > li {
+  cursor: pointer;
+  justify-content: space-between;
+  list-style-type: none;
+  text-align: center;
+  align-self: center;
+  padding: 4px;
+  font-weight: bold;
+}
+nav .main-nav > li:hover {
+  border-bottom: 2px solid red;
+  font-size: 18px;
+}
+nav .main-nav > li a {
+  text-decoration: none;
+  color: white;
+}
+nav .main-nav .destination-content {
+  display: none;
+}
+nav .main-nav .ticket-content {
+  display: none;
+}
+
+@media only screen and (max-width: 450px) {
+  header {
+    width: 100vw;
+  }
+  header .left {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+  header .left .hamburger {
+    display: block;
+    cursor: pointer;
+    align-self: center;
+    margin: 0 10px;
+  }
+  header .left .hamburger .line {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 3px 0;
+  }
+  .nav-bar {
+    background-color: aqua;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 0;
+    transition: 0.5s;
+  }
+  .nav-bar .main-nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+  }
+  .nav-bar .main-nav .destination {
+    display: block;
+    overflow: hidden;
+  }
+  .nav-bar .main-nav .ticket {
+    display: block;
+  }
+  .nav-bar .main-nav .destination-content.activeD {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-bar .main-nav .destination-content.activeD > a {
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .nav-bar .main-nav .destination-content.activeD > a:hover {
+    color: black;
+    border-bottom: 1px solid red;
+  }
+  .nav-bar .main-nav .ticket-content.activeT {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-bar .main-nav .ticket-content.activeT > a {
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .nav-bar .main-nav .ticket-content.activeT > a:hover {
+    color: black;
+    border-bottom: 1px solid red;
+  }
+  .firstSection {
+    padding: 5px 8px 5px 5px;
+    padding-right: 20px;
+    width: 100vw;
+    height: auto;
+  }
+  .firstSection .uraSection {
+    width: 100%;
+    height: 100%;
+  }
+  .firstSection .uraSection #uraGurit {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .firstSection .travelA {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  .firstSection .travelA #planeStation {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .firstSection .travelB {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  .firstSection .travelB #planeStation {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 15px;
+    padding: 10px 5px;
+  }
+  .images .img {
+    width: 100%;
+    text-align: center;
+    background-color: aliceblue;
+    box-shadow: 5px 5px 10px rgb(183, 174, 174);
+    border-radius: 5px;
+  }
+  .images .img img {
+    width: 100%;
+    height: 185px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  h2 {
+    text-align: center;
+    border-top: 1px solid black;
+  }
+}
+.nav-bar.active {
+  height: 90vh;
+}
+.nav-bar.active .main-nav {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px) {
+  header {
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+  }
+  .left {
+    width: 20%;
+  }
+  .left .hamburger {
+    display: none;
+  }
+  .nav-bar {
+    width: 80%;
+  }
+  .nav-bar .main-nav {
+    display: flex;
+  }
+  .nav-bar .main-nav li a {
+    font-size: 2vw;
+  }
+  .nav-bar .main-nav .destination-content.activeD {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 10vh;
+    padding-right: 25px;
+    border: 1px solid black;
+    background-color: rgb(5, 89, 168);
+  }
+  .nav-bar .main-nav .destination-content.activeD a {
+    text-align: center;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .nav-bar .main-nav .ticket-content.activeT {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 10vh;
+    padding-right: 10px;
+    border: 1px solid black;
+    background-color: rgb(5, 89, 168);
+  }
+  .nav-bar .main-nav .ticket-content.activeT a {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .firstSection .uraSection {
+    text-align: center;
+    margin: 0;
+  }
+  .firstSection .uraSection img {
+    width: 100vh;
+    height: auto;
+    margin: 0;
+  }
+  .firstSection .column {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+  }
+  .firstSection .column .travelImg {
+    margin: 5px;
+    width: 100%;
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    text-align: center;
+  }
+  .firstSection .column p {
+    text-align: center;
+    margin: 0 5px;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 15px;
+    padding: 10px 5px;
+  }
+  .images .img {
+    width: 100%;
+    text-align: center;
+    background-color: aliceblue;
+    box-shadow: 5px 5px 10px rgb(183, 174, 174);
+    border-radius: 5px;
+  }
+  .images .img img {
+    width: 100%;
+    height: 185px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media only screen and (min-width: 768px) {
+  header {
+    overflow-y: hidden;
+  }
+  .nav-bar .main-nav .destination-content.activeD {
+    display: block;
+    position: absolute;
+    top: 10vh;
+    padding-right: 25px;
+    border: 1px solid black;
+    background-color: rgb(5, 89, 168);
+  }
+  .nav-bar .main-nav .destination-content.activeD a {
+    text-align: center;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .nav-bar .main-nav .ticket-content.activeT {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 10vh;
+    padding-right: 10px;
+    border: 1px solid black;
+    background-color: rgb(5, 89, 168);
+  }
+  .nav-bar .main-nav .ticket-content.activeT a {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .firstSection {
+    width: 100vw;
+    height: auto;
+  }
+  .firstSection .uraSection {
+    width: 100%;
+    height: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .firstSection .uraSection #uraGurit {
+    width: 100%;
+    height: 100%;
+  }
+  .firstSection .uraSection .desSection {
+    width: 100%;
+    padding-right: 15px;
+    margin-left: 10px;
+  }
+  .firstSection .travelA {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .firstSection .travelA #planeStation {
+    width: 100%;
+  }
+  .firstSection .travelA p {
+    width: 100%;
+    padding-right: 15px;
+    margin-left: 10px;
+  }
+  .firstSection .travelB {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .firstSection .travelB #busStation {
+    width: 100%;
+  }
+  .firstSection .travelB p {
+    width: 100%;
+    padding-right: 15px;
+    margin-left: 10px;
+  }
+  h2 {
+    text-align: center;
+  }
+  .images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */

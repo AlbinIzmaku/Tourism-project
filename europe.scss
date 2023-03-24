@@ -1,0 +1,39 @@
+$myColor: rgb(5, 89, 168);
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(images/backImage.jpg);
+}
+form {
+  background-color: $myColor;
+  border: 1px solid black;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50px;
+  font-weight: bold;
+  select,
+  input {
+    font-weight: bold;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    border-radius: 50px;
+  }
+  input[type="submit"] {
+    margin-bottom: 10px;
+    background-color: green;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  input[type="submit"] {
+    width: 25%;
+  }
+}
